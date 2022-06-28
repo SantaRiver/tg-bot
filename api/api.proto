@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package tinkoff.public.invest.api.contract.v1;
+
+option go_package = "./;investapi";
+
+import "google/protobuf/empty.proto";
+import "google/api/annotations.proto";
+import "instruments.proto";
+
+service SharesService {
+  rpc AddShare (Share) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      post: "/v1/api/shares"
+    };
+  };
+  rpc GetShare (Share) returns (Share) {
+    option (google.api.http) = {
+      get: "/v1/api/shares/{figi}"
+    };
+  }
+}

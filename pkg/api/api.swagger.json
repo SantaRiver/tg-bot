@@ -1,0 +1,935 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "api.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "SharesService"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/api/shares": {
+      "post": {
+        "operationId": "SharesService_AddShare",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "type": "object",
+              "properties": {}
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "figi",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "ticker",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "classCode",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "isin",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "lot",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "currency",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "klong.units",
+            "description": "целая часть суммы, может быть отрицательным числом",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "klong.nano",
+            "description": "дробная часть суммы, может быть отрицательным числом",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "kshort.units",
+            "description": "целая часть суммы, может быть отрицательным числом",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "kshort.nano",
+            "description": "дробная часть суммы, может быть отрицательным числом",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "dlong.units",
+            "description": "целая часть суммы, может быть отрицательным числом",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "dlong.nano",
+            "description": "дробная часть суммы, может быть отрицательным числом",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "dshort.units",
+            "description": "целая часть суммы, может быть отрицательным числом",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "dshort.nano",
+            "description": "дробная часть суммы, может быть отрицательным числом",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "dlongMin.units",
+            "description": "целая часть суммы, может быть отрицательным числом",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "dlongMin.nano",
+            "description": "дробная часть суммы, может быть отрицательным числом",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "dshortMin.units",
+            "description": "целая часть суммы, может быть отрицательным числом",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "dshortMin.nano",
+            "description": "дробная часть суммы, может быть отрицательным числом",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "shortEnabledFlag",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "exchange",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "ipoDate",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "issueSize",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "countryOfRisk",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "countryOfRiskName",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "sector",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "issueSizePlan",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "nominal.currency",
+            "description": "строковый ISO-код валюты",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "nominal.units",
+            "description": "целая часть суммы, может быть отрицательным числом",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "nominal.nano",
+            "description": "дробная часть суммы, может быть отрицательным числом",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "tradingStatus",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "SECURITY_TRADING_STATUS_UNSPECIFIED",
+              "SECURITY_TRADING_STATUS_NOT_AVAILABLE_FOR_TRADING",
+              "SECURITY_TRADING_STATUS_OPENING_PERIOD",
+              "SECURITY_TRADING_STATUS_CLOSING_PERIOD",
+              "SECURITY_TRADING_STATUS_BREAK_IN_TRADING",
+              "SECURITY_TRADING_STATUS_NORMAL_TRADING",
+              "SECURITY_TRADING_STATUS_CLOSING_AUCTION",
+              "SECURITY_TRADING_STATUS_DARK_POOL_AUCTION",
+              "SECURITY_TRADING_STATUS_DISCRETE_AUCTION",
+              "SECURITY_TRADING_STATUS_OPENING_AUCTION_PERIOD",
+              "SECURITY_TRADING_STATUS_TRADING_AT_CLOSING_AUCTION_PRICE",
+              "SECURITY_TRADING_STATUS_SESSION_ASSIGNED",
+              "SECURITY_TRADING_STATUS_SESSION_CLOSE",
+              "SECURITY_TRADING_STATUS_SESSION_OPEN",
+              "SECURITY_TRADING_STATUS_DEALER_NORMAL_TRADING",
+              "SECURITY_TRADING_STATUS_DEALER_BREAK_IN_TRADING",
+              "SECURITY_TRADING_STATUS_DEALER_NOT_AVAILABLE_FOR_TRADING"
+            ],
+            "default": "SECURITY_TRADING_STATUS_UNSPECIFIED"
+          },
+          {
+            "name": "otcFlag",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "buyAvailableFlag",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "sellAvailableFlag",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "divYieldFlag",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "shareType",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "SHARE_TYPE_UNSPECIFIED",
+              "SHARE_TYPE_COMMON",
+              "SHARE_TYPE_PREFERRED",
+              "SHARE_TYPE_ADR",
+              "SHARE_TYPE_GDR",
+              "SHARE_TYPE_MLP",
+              "SHARE_TYPE_NY_REG_SHRS",
+              "SHARE_TYPE_CLOSED_END_FUND",
+              "SHARE_TYPE_REIT"
+            ],
+            "default": "SHARE_TYPE_UNSPECIFIED"
+          },
+          {
+            "name": "minPriceIncrement.units",
+            "description": "целая часть суммы, может быть отрицательным числом",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "minPriceIncrement.nano",
+            "description": "дробная часть суммы, может быть отрицательным числом",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "apiTradeAvailableFlag",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "uid",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "realExchange",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "REAL_EXCHANGE_UNSPECIFIED",
+              "REAL_EXCHANGE_MOEX",
+              "REAL_EXCHANGE_RTS",
+              "REAL_EXCHANGE_OTC"
+            ],
+            "default": "REAL_EXCHANGE_UNSPECIFIED"
+          }
+        ],
+        "tags": [
+          "SharesService"
+        ]
+      }
+    },
+    "/v1/api/shares/{figi}": {
+      "get": {
+        "operationId": "SharesService_GetShare",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1Share"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "figi",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "ticker",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "classCode",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "isin",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "lot",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "currency",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "klong.units",
+            "description": "целая часть суммы, может быть отрицательным числом",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "klong.nano",
+            "description": "дробная часть суммы, может быть отрицательным числом",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "kshort.units",
+            "description": "целая часть суммы, может быть отрицательным числом",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "kshort.nano",
+            "description": "дробная часть суммы, может быть отрицательным числом",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "dlong.units",
+            "description": "целая часть суммы, может быть отрицательным числом",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "dlong.nano",
+            "description": "дробная часть суммы, может быть отрицательным числом",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "dshort.units",
+            "description": "целая часть суммы, может быть отрицательным числом",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "dshort.nano",
+            "description": "дробная часть суммы, может быть отрицательным числом",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "dlongMin.units",
+            "description": "целая часть суммы, может быть отрицательным числом",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "dlongMin.nano",
+            "description": "дробная часть суммы, может быть отрицательным числом",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "dshortMin.units",
+            "description": "целая часть суммы, может быть отрицательным числом",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "dshortMin.nano",
+            "description": "дробная часть суммы, может быть отрицательным числом",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "shortEnabledFlag",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "exchange",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "ipoDate",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "issueSize",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "countryOfRisk",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "countryOfRiskName",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "sector",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "issueSizePlan",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "nominal.currency",
+            "description": "строковый ISO-код валюты",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "nominal.units",
+            "description": "целая часть суммы, может быть отрицательным числом",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "nominal.nano",
+            "description": "дробная часть суммы, может быть отрицательным числом",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "tradingStatus",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "SECURITY_TRADING_STATUS_UNSPECIFIED",
+              "SECURITY_TRADING_STATUS_NOT_AVAILABLE_FOR_TRADING",
+              "SECURITY_TRADING_STATUS_OPENING_PERIOD",
+              "SECURITY_TRADING_STATUS_CLOSING_PERIOD",
+              "SECURITY_TRADING_STATUS_BREAK_IN_TRADING",
+              "SECURITY_TRADING_STATUS_NORMAL_TRADING",
+              "SECURITY_TRADING_STATUS_CLOSING_AUCTION",
+              "SECURITY_TRADING_STATUS_DARK_POOL_AUCTION",
+              "SECURITY_TRADING_STATUS_DISCRETE_AUCTION",
+              "SECURITY_TRADING_STATUS_OPENING_AUCTION_PERIOD",
+              "SECURITY_TRADING_STATUS_TRADING_AT_CLOSING_AUCTION_PRICE",
+              "SECURITY_TRADING_STATUS_SESSION_ASSIGNED",
+              "SECURITY_TRADING_STATUS_SESSION_CLOSE",
+              "SECURITY_TRADING_STATUS_SESSION_OPEN",
+              "SECURITY_TRADING_STATUS_DEALER_NORMAL_TRADING",
+              "SECURITY_TRADING_STATUS_DEALER_BREAK_IN_TRADING",
+              "SECURITY_TRADING_STATUS_DEALER_NOT_AVAILABLE_FOR_TRADING"
+            ],
+            "default": "SECURITY_TRADING_STATUS_UNSPECIFIED"
+          },
+          {
+            "name": "otcFlag",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "buyAvailableFlag",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "sellAvailableFlag",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "divYieldFlag",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "shareType",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "SHARE_TYPE_UNSPECIFIED",
+              "SHARE_TYPE_COMMON",
+              "SHARE_TYPE_PREFERRED",
+              "SHARE_TYPE_ADR",
+              "SHARE_TYPE_GDR",
+              "SHARE_TYPE_MLP",
+              "SHARE_TYPE_NY_REG_SHRS",
+              "SHARE_TYPE_CLOSED_END_FUND",
+              "SHARE_TYPE_REIT"
+            ],
+            "default": "SHARE_TYPE_UNSPECIFIED"
+          },
+          {
+            "name": "minPriceIncrement.units",
+            "description": "целая часть суммы, может быть отрицательным числом",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "minPriceIncrement.nano",
+            "description": "дробная часть суммы, может быть отрицательным числом",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "apiTradeAvailableFlag",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "uid",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "realExchange",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "REAL_EXCHANGE_UNSPECIFIED",
+              "REAL_EXCHANGE_MOEX",
+              "REAL_EXCHANGE_RTS",
+              "REAL_EXCHANGE_OTC"
+            ],
+            "default": "REAL_EXCHANGE_UNSPECIFIED"
+          }
+        ],
+        "tags": [
+          "SharesService"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1MoneyValue": {
+      "type": "object",
+      "properties": {
+        "currency": {
+          "type": "string",
+          "title": "строковый ISO-код валюты"
+        },
+        "units": {
+          "type": "string",
+          "format": "int64",
+          "title": "целая часть суммы, может быть отрицательным числом"
+        },
+        "nano": {
+          "type": "integer",
+          "format": "int32",
+          "title": "дробная часть суммы, может быть отрицательным числом"
+        }
+      },
+      "title": "Денежная сумма в определенной валюте"
+    },
+    "v1Quotation": {
+      "type": "object",
+      "properties": {
+        "units": {
+          "type": "string",
+          "format": "int64",
+          "title": "целая часть суммы, может быть отрицательным числом"
+        },
+        "nano": {
+          "type": "integer",
+          "format": "int32",
+          "title": "дробная часть суммы, может быть отрицательным числом"
+        }
+      },
+      "title": "Котировка - денежная сумма без указания валюты"
+    },
+    "v1RealExchange": {
+      "type": "string",
+      "enum": [
+        "REAL_EXCHANGE_UNSPECIFIED",
+        "REAL_EXCHANGE_MOEX",
+        "REAL_EXCHANGE_RTS",
+        "REAL_EXCHANGE_OTC"
+      ],
+      "default": "REAL_EXCHANGE_UNSPECIFIED",
+      "description": "Реальная площадка исполнения расчётов."
+    },
+    "v1SecurityTradingStatus": {
+      "type": "string",
+      "enum": [
+        "SECURITY_TRADING_STATUS_UNSPECIFIED",
+        "SECURITY_TRADING_STATUS_NOT_AVAILABLE_FOR_TRADING",
+        "SECURITY_TRADING_STATUS_OPENING_PERIOD",
+        "SECURITY_TRADING_STATUS_CLOSING_PERIOD",
+        "SECURITY_TRADING_STATUS_BREAK_IN_TRADING",
+        "SECURITY_TRADING_STATUS_NORMAL_TRADING",
+        "SECURITY_TRADING_STATUS_CLOSING_AUCTION",
+        "SECURITY_TRADING_STATUS_DARK_POOL_AUCTION",
+        "SECURITY_TRADING_STATUS_DISCRETE_AUCTION",
+        "SECURITY_TRADING_STATUS_OPENING_AUCTION_PERIOD",
+        "SECURITY_TRADING_STATUS_TRADING_AT_CLOSING_AUCTION_PRICE",
+        "SECURITY_TRADING_STATUS_SESSION_ASSIGNED",
+        "SECURITY_TRADING_STATUS_SESSION_CLOSE",
+        "SECURITY_TRADING_STATUS_SESSION_OPEN",
+        "SECURITY_TRADING_STATUS_DEALER_NORMAL_TRADING",
+        "SECURITY_TRADING_STATUS_DEALER_BREAK_IN_TRADING",
+        "SECURITY_TRADING_STATUS_DEALER_NOT_AVAILABLE_FOR_TRADING"
+      ],
+      "default": "SECURITY_TRADING_STATUS_UNSPECIFIED",
+      "title": "Режим торгов инструмента"
+    },
+    "v1Share": {
+      "type": "object",
+      "properties": {
+        "figi": {
+          "type": "string"
+        },
+        "ticker": {
+          "type": "string"
+        },
+        "classCode": {
+          "type": "string"
+        },
+        "isin": {
+          "type": "string"
+        },
+        "lot": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "currency": {
+          "type": "string"
+        },
+        "klong": {
+          "$ref": "#/definitions/v1Quotation"
+        },
+        "kshort": {
+          "$ref": "#/definitions/v1Quotation"
+        },
+        "dlong": {
+          "$ref": "#/definitions/v1Quotation"
+        },
+        "dshort": {
+          "$ref": "#/definitions/v1Quotation"
+        },
+        "dlongMin": {
+          "$ref": "#/definitions/v1Quotation"
+        },
+        "dshortMin": {
+          "$ref": "#/definitions/v1Quotation"
+        },
+        "shortEnabledFlag": {
+          "type": "boolean"
+        },
+        "name": {
+          "type": "string"
+        },
+        "exchange": {
+          "type": "string"
+        },
+        "ipoDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "issueSize": {
+          "type": "string",
+          "format": "int64"
+        },
+        "countryOfRisk": {
+          "type": "string"
+        },
+        "countryOfRiskName": {
+          "type": "string"
+        },
+        "sector": {
+          "type": "string"
+        },
+        "issueSizePlan": {
+          "type": "string",
+          "format": "int64"
+        },
+        "nominal": {
+          "$ref": "#/definitions/v1MoneyValue"
+        },
+        "tradingStatus": {
+          "$ref": "#/definitions/v1SecurityTradingStatus"
+        },
+        "otcFlag": {
+          "type": "boolean"
+        },
+        "buyAvailableFlag": {
+          "type": "boolean"
+        },
+        "sellAvailableFlag": {
+          "type": "boolean"
+        },
+        "divYieldFlag": {
+          "type": "boolean"
+        },
+        "shareType": {
+          "$ref": "#/definitions/v1ShareType"
+        },
+        "minPriceIncrement": {
+          "$ref": "#/definitions/v1Quotation"
+        },
+        "apiTradeAvailableFlag": {
+          "type": "boolean"
+        },
+        "uid": {
+          "type": "string"
+        },
+        "realExchange": {
+          "$ref": "#/definitions/v1RealExchange"
+        }
+      },
+      "description": "Объект передачи информации об акции."
+    },
+    "v1ShareType": {
+      "type": "string",
+      "enum": [
+        "SHARE_TYPE_UNSPECIFIED",
+        "SHARE_TYPE_COMMON",
+        "SHARE_TYPE_PREFERRED",
+        "SHARE_TYPE_ADR",
+        "SHARE_TYPE_GDR",
+        "SHARE_TYPE_MLP",
+        "SHARE_TYPE_NY_REG_SHRS",
+        "SHARE_TYPE_CLOSED_END_FUND",
+        "SHARE_TYPE_REIT"
+      ],
+      "default": "SHARE_TYPE_UNSPECIFIED",
+      "description": "Тип акций."
+    }
+  }
+}
